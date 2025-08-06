@@ -5,16 +5,14 @@ interface AboutPanelProps {
 export default function AboutPanel({ onClose }: AboutPanelProps) {
   return (
     <div className="fixed top-0 right-0 w-full h-full z-50 flex bg-black text-white">
-      {/* Left Side Image */}
       <div className="w-1/2 h-full relative">
         <img
-          src="/about/dq.jpg" // Replace with your actual image path
+          src="/about/dq.jpg"
           alt="Dulquer Salmaan"
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Right Side Content */}
       <div className="w-1/2 h-full p-12 flex flex-col justify-center relative bg-[#141414]">
         <button
           onClick={onClose}
