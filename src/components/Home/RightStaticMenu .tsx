@@ -1,5 +1,5 @@
 "use client";
-import { XCircle } from "lucide-react";
+import { Dot, XCircle } from "lucide-react";
 
 type RightStaticMenuProps = {
   showCategories: boolean;
@@ -17,51 +17,63 @@ export default function RightStaticMenu({
   handleClose,
 }: RightStaticMenuProps) {
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-30 pr-4">
-      <div className="flex flex-col items-end gap-12">
+    <div className="fixed top-0 right-0 h-screen w-20 z-50 bg-black/60 backdrop-blur-md rounded-l-lg flex items-center justify-center">
+      <div className="flex flex-col items-center justify-between h-48 w-full">
         {/* Categories Button */}
-        <div className="h-6">
+        <div className="w-full text-center">
           {showCategories ? (
+            // Show Close button ONLY replacing Categories button
             <button
               onClick={handleClose}
-              className="text-white hover:text-yellow-500 flex items-center gap-2"
+              className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
             >
-              <XCircle size={18} /> Close
+              <XCircle size={18} />
+              <span className="text-xs">Close</span>
             </button>
           ) : (
+            // Show Categories button if not active
             <button
               onClick={() => {
                 setShowCategories(true);
                 setShowAbout(false);
               }}
-              className="text-white hover:text-yellow-500 rotate-90 origin-right whitespace-nowrap"
+              className="text-white hover:text-yellow-500 w-full"
             >
-              Categories
+              <span className="transform rotate-90 origin-center text-sm block">
+                Categories
+              </span>
             </button>
           )}
         </div>
 
+        {/* Dot Divider */}
+        <Dot size={18} className="text-white" />
+
         {/* About Button */}
-        <div className="h-6">
-          {!showCategories &&
-            (showAbout ? (
-              <button
-                onClick={handleClose}
-                className="text-white hover:text-yellow-500 flex items-center gap-2"
-              >
-                <XCircle size={18} /> Close
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  setShowAbout(true);
-                  setShowCategories(false);
-                }}
-                className="text-white hover:text-yellow-500 rotate-90 origin-right whitespace-nowrap"
-              >
+        <div className="w-full text-center">
+          {showAbout ? (
+            // Show Close button ONLY replacing About button
+            <button
+              onClick={handleClose}
+              className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
+            >
+              <XCircle size={18} />
+              <span className="text-xs">Close</span>
+            </button>
+          ) : (
+            // Show About button if not active
+            <button
+              onClick={() => {
+                setShowAbout(true);
+                setShowCategories(false);
+              }}
+              className="text-white hover:text-yellow-500 w-full"
+            >
+              <span className="transform rotate-90 origin-center text-sm block">
                 About
-              </button>
-            ))}
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </div>

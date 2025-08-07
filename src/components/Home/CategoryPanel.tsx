@@ -27,7 +27,7 @@ const categories = [
 
 export default function CategoryPanel({ onClose }: CategoryPanelProps) {
   return (
-    <div className="fixed top-0 right-0 w-full h-full z-50 flex">
+    <div className="fixed top-0 left-0 w-full h-full z-40 flex flex-col md:flex-row bg-black text-white">
       {categories.map((cat, i) => (
         <a
           href={cat.link}
@@ -50,12 +50,6 @@ export default function CategoryPanel({ onClose }: CategoryPanelProps) {
           </span>
         </a>
       ))}
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-white text-sm z-50"
-      >
-        ✕ CLOSE
-      </button>
     </div>
   );
 }

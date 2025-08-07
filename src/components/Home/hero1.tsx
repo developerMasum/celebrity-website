@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Facebook, Instagram, Youtube } from "lucide-react";
 import image1 from "@/assets/hero/hero1.webp";
 import Image from "next/image";
 import CategoryPanel from "./CategoryPanel";
 import AboutPanel from "./AboutPanel";
-import RightStaticMenu from "./RightStaticMenu ";
+
 import SocialIcons from "./SocialIcon";
+import RightStaticMenu from "./RightStaticMenu ";
 
 export default function HeroOne() {
   const [showCategories, setShowCategories] = useState(false);
@@ -36,7 +36,7 @@ export default function HeroOne() {
       {/* Social Icons */}
       <SocialIcons />
 
-      {/* Right Static Menu */}
+      {/* Right Static Menu - always visible */}
       <RightStaticMenu
         showCategories={showCategories}
         showAbout={showAbout}
@@ -46,7 +46,7 @@ export default function HeroOne() {
       />
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col justify-end h-full px-10 pb-10">
+      <div className="relative z-20 flex flex-col justify-end h-full px-60 pb-10">
         <p className="text-sm text-yellow-500">Releasing on 31st October</p>
         <h1 className="text-5xl font-bold">Lucky Baskhar</h1>
         <button className="mt-4 w-2/12 border border-yellow-500 px-6 py-2 hover:bg-yellow-500 hover:text-black transition">
