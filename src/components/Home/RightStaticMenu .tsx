@@ -1,5 +1,5 @@
 "use client";
-import { Dot, XCircle } from "lucide-react";
+import { Dot, X, XCircle } from "lucide-react";
 
 type RightStaticMenuProps = {
   showCategories: boolean;
@@ -27,8 +27,10 @@ export default function RightStaticMenu({
               onClick={handleClose}
               className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
             >
-              <XCircle size={18} />
-              <span className="text-xs">Close</span>
+              <X size={18} />
+              <span className="pl-8 transform rotate-90 origin-center text-sm block">
+                Close
+              </span>
             </button>
           ) : (
             // Show Categories button if not active
@@ -57,8 +59,10 @@ export default function RightStaticMenu({
               onClick={handleClose}
               className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
             >
-              <XCircle size={18} />
-              <span className="text-xs">Close</span>
+              <X size={18} />
+              <span className="pl-8 transform rotate-90 origin-center text-sm block">
+                Close
+              </span>
             </button>
           ) : (
             // Show About button if not active

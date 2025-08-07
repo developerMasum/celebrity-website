@@ -1,7 +1,8 @@
 "use client";
+import assets from "@/assets";
 import Image from "next/image";
 
-interface AboutPanelProps {
+export interface AboutPanelProps {
   onClose: () => void;
 }
 
@@ -11,7 +12,7 @@ export default function AboutPanel({ onClose }: AboutPanelProps) {
       {/* Left Image */}
       <div className="w-full md:w-1/2 h-64 md:h-full relative">
         <Image
-          src="/about/dq.jpg"
+          src={assets.hero.about}
           alt="Dulquer Salmaan portrait"
           fill
           className="object-cover"
