@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
         <NavBar />
-        {children}
+        <div className="">{children}</div>
       </body>
     </html>
   );

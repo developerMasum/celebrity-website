@@ -6,8 +6,8 @@ import { Dumbbell, Info, Phone, Wrench, Menu, X } from "lucide-react";
 
 const NavLinks = [
   { name: "Home", url: "/", icon: <Dumbbell size={16} /> },
+  { name: "Movies", url: "/movies", icon: <Wrench size={16} /> },
   { name: "About", url: "/about", icon: <Info size={16} /> },
-  { name: "Services", url: "/services", icon: <Wrench size={16} /> },
   { name: "Contact", url: "/contact", icon: <Phone size={16} /> },
 ];
 
