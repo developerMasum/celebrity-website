@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
+import NavBar from "@/components/Reuseable/Navbar";
 
 // Load Roboto font with variable support
 const roboto = Roboto({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} antialiased`}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
