@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Dumbbell, Info, Phone, Wrench, Menu, X } from "lucide-react";
+import Image from "next/image";
+import assets from "@/assets";
 
 const NavLinks = [
   { name: "Home", url: "/", icon: <Dumbbell size={16} /> },
   { name: "Movies", url: "/movies", icon: <Wrench size={16} /> },
+  { name: "Gallery", url: "/gallery", icon: <Info size={16} /> },
   { name: "About", url: "/about", icon: <Info size={16} /> },
   { name: "Contact", url: "/contact", icon: <Phone size={16} /> },
 ];
@@ -29,7 +32,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className="w-full h-auto bg-transparent overflow-x-hidden fixed z-50 top-0 left-0">
+    <header className="w-full h-auto bg-transparent overflow-x-hidden fixed z-50 top-0 left-0 pr-2">
       {/* Desktop Navbar */}
       <nav
         className={`w-full lg:h-28 md:h-24 h-20 ${
@@ -41,7 +44,7 @@ const NavBar = () => {
           href="/"
           className="font-extrabold flex items-center relative md:text-2xl text-lg text-white"
         >
-          <span className="text-amber-500">Gym</span>Nex
+          <Image src={assets.logo} alt="logo" width={50} height={50} />
         </Link>
 
         {/* Desktop Links */}

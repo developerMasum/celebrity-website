@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface MovieCardProps {
@@ -15,7 +16,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
   likes,
   comments,
 }) => (
-  <div className="bg-black rounded-lg overflow-hidden shadow-lg">
+  <Link
+    href={`/movies/${title}`}
+    className="bg-black rounded-lg overflow-hidden shadow-lg"
+  >
     <div
       className="w-full h-72 bg-center bg-cover"
       style={{ backgroundImage: `url(${imageUrl})` }}
@@ -28,7 +32,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
       <span>❤ {likes} likes</span>
       <span>💬 {comments > 0 ? `${comments} Comments` : "No Comments"}</span>
     </div>
-  </div>
+  </Link>
 );
 
 export default MovieCard;
