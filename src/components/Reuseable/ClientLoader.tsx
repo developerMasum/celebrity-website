@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export default function ClientRouteLoader({
@@ -23,7 +23,9 @@ export default function ClientRouteLoader({
       const timeout = setTimeout(() => {
         setLoading(false);
         setPrevPath(pathname);
-      }, 3000); // 3 seconds loading
+        setTextIndex(0);
+        setDirection(1);
+      }, 2000); // 3 seconds loading
 
       return () => clearTimeout(timeout);
     }
@@ -49,15 +51,43 @@ export default function ClientRouteLoader({
     return () => clearInterval(interval);
   }, [loading, direction, texts.length]);
 
+  // Height of one text item (adjust if you change font size)
+  const itemHeight = 48; // px (roughly for text-5xl)
+
   if (loading) {
     return (
       <div
         className="fixed inset-0 bg-black flex items-center justify-center z-50 select-none"
         aria-live="polite"
       >
-        <p className="text-white font-bold text-4xl font-mono">
-          [ Dulquer Salmaan <span>{texts[textIndex]}</span> ]
-        </p>
+        <div className="text-white font-bold text-4xl font-mono flex items-center">
+          <span className="text-yellow-500 text-5xl pr-4">[</span> Dulquer
+          Salmaan{" "}
+          <span
+            className="text-yellow-500 overflow-hidden h-[48px] relative inline-block w-[220px] ml-2"
+            aria-label={texts[textIndex]}
+          >
+            <div
+              style={{
+                transform: `translateY(-${textIndex * itemHeight}px)`,
+                transition: "transform 0.5s ease",
+              }}
+            >
+              {texts.map((text, i) => (
+                <div
+                  key={i}
+                  style={{
+                    height: `${itemHeight}px`,
+                    lineHeight: `${itemHeight}px`,
+                  }}
+                >
+                  {text}
+                </div>
+              ))}
+            </div>
+          </span>
+          <span className="text-yellow-500 text-5xl pl-4">]</span>
+        </div>
       </div>
     );
   }
