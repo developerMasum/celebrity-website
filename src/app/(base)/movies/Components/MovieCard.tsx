@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 interface MovieCardProps {
+  id: string | number;
   imageUrl: string;
   title: string;
   date: string;
@@ -15,9 +16,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
   date,
   likes,
   comments,
+  id,
 }) => (
   <Link
-    href={`/movies/${title}`}
+    href={`/movies/${id}`}
     className="bg-black rounded-lg overflow-hidden shadow-lg"
   >
     <div

@@ -2,41 +2,9 @@
 
 import { useState } from "react";
 import MovieCard from "./Components/MovieCard";
+import { moviesData } from "@/lib/mockData";
 
 const tabs = ["All", "Malayalam", "Tamil", "Telugu", "Hindi"];
-
-const moviesData = [
-  {
-    id: 1,
-    title: "Lucky Baskhar",
-    date: "July 27, 2024",
-    likes: 103,
-    comments: 0,
-    category: "Telugu",
-    imageUrl:
-      "https://cdn.statically.io/img/dulquer.com/wp-content/uploads/2024/07/1526108-lucky-baskar-1024x614.webp", // Replace with Google image URL
-  },
-  {
-    id: 2,
-    title: "Kalki 2898 AD",
-    date: "June 27, 2024",
-    likes: 60,
-    comments: 0,
-    category: "Telugu",
-    imageUrl:
-      "https://cdn.statically.io/img/dulquer.com/wp-content/uploads/2024/07/1526108-lucky-baskar-1024x614.webp", // Replace with Google image URL
-  },
-  {
-    id: 3,
-    title: "King of Kotha",
-    date: "August 24, 2023",
-    likes: 20,
-    comments: 0,
-    category: "Malayalam",
-    imageUrl:
-      "https://cdn.statically.io/img/dulquer.com/wp-content/uploads/2024/07/1526108-lucky-baskar-1024x614.webp", // Replace with Google image URL
-  },
-];
 
 export default function Movies() {
   const [activeTab, setActiveTab] = useState("All");

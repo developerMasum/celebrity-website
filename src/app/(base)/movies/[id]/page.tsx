@@ -1,25 +1,36 @@
-// components/MovieDetailPage.tsx
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
+import { useParams } from "next/navigation";
+import { moviesData } from "@/lib/mockData";
+import Socials from "../Components/Socials";
 
 export default function MovieDetailPage() {
-  const [likes, setLikes] = useState(20);
+  const { id } = useParams();
+  const movie = moviesData.find((m) => m.id === Number(id));
+  const [likes, setLikes] = useState(movie ? movie.likes : 0);
+
+  if (!movie) {
+    return (
+      <div className="container mx-auto py-10 mt-32">
+        <h1 className="text-2xl font-bold">Movie not found</h1>
+      </div>
+    );
+  }
 
   return (
-    <div className=" container mx-auto py-10 min-h-screen  mt-32">
+    <div className="container mx-auto py-10 min-h-screen mt-32">
       {/* Title */}
-      <h1 className="text-4xl font-bold mb-2">King of Kotha</h1>
-      <p className="text-gray-400 mb-6">August 24, 2023</p>
+      <Socials date={movie.date} title={movie.title} />
 
       {/* Movie Poster */}
       <div className="mb-6">
         <Image
-          src="/king-of-kotha.jpg" // replace with actual image path
-          alt="King of Kotha Poster"
-          width={900}
-          height={500}
+          src={movie.imageUrl}
+          alt={`${movie.title} Poster`}
+          width={500}
+          height={300}
           className="w-full rounded-lg object-cover"
         />
       </div>
@@ -37,18 +48,19 @@ export default function MovieDetailPage() {
           <tbody>
             <tr className="border-b border-gray-700">
               <td className="p-3 font-semibold w-1/4">Directed by</td>
-              <td className="p-3">Abhilash Joshiy</td>
+              <td className="p-3">{movie.directedBy}</td>
             </tr>
             <tr className="border-b border-gray-700">
               <td className="p-3 font-semibold">Written by</td>
-              <td className="p-3">Abhilash N. Chandran</td>
+              <td className="p-3">{movie.writtenBy}</td>
             </tr>
             <tr className="border-b border-gray-700">
               <td className="p-3 font-semibold">Produced by</td>
               <td className="p-3">
                 <ul className="list-disc ml-5">
-                  <li>Dulquer Salmaan</li>
-                  <li>Zee Studios</li>
+                  {movie.producedBy.map((producer, idx) => (
+                    <li key={idx}>{producer}</li>
+                  ))}
                 </ul>
               </td>
             </tr>
@@ -56,13 +68,9 @@ export default function MovieDetailPage() {
               <td className="p-3 font-semibold">Starring</td>
               <td className="p-3">
                 <ul className="list-disc ml-5">
-                  <li>Dulquer Salmaan</li>
-                  <li>Shabeer Kallarakkal</li>
-                  <li>Prasanna</li>
-                  <li>Gokul Suresh</li>
-                  <li>Aishwarya Lekshmi</li>
-                  <li>Nyla Usha</li>
-                  <li>Chemban Vinod Jose</li>
+                  {movie.starring.map((actor, idx) => (
+                    <li key={idx}>{actor}</li>
+                  ))}
                 </ul>
               </td>
             </tr>
