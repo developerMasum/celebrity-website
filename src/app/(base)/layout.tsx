@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "../styles/globals.css";
 import NavBar from "@/components/Reuseable/Navbar";
+import ClientRouteLoader from "@/components/Reuseable/ClientLoader";
 
-// Load Roboto font with variable support
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // Add other weights if needed
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
         <NavBar />
-        <div className="">{children}</div>
+        <ClientRouteLoader>
+          <div>{children}</div>
+        </ClientRouteLoader>
       </body>
     </html>
   );
