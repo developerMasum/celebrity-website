@@ -25,7 +25,7 @@ export default function RootLayout({
         <NavBar />
         <ClientRouteLoader>
           <div>{children}</div>
-          <FooterWrapper /> {/* Only this part is client */}
+          <FooterWrapper />
         </ClientRouteLoader>
       </body>
     </html>
