@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "../styles/globals.css";
 import NavBar from "@/components/Reuseable/Navbar";
 import ClientRouteLoader from "@/components/Reuseable/ClientLoader";
+import FooterWrapper from "@/components/Reuseable/FooterWrapper";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <NavBar />
         <ClientRouteLoader>
           <div>{children}</div>
+          <FooterWrapper /> {/* Only this part is client */}
         </ClientRouteLoader>
       </body>
     </html>

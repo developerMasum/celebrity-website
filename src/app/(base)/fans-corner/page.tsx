@@ -109,7 +109,7 @@ export default function FansSlider() {
                     <button
                       className={`mt-6 px-6 py-2 border ${leftFan.btnBorder} ${leftFan.btnText} hover:bg-[#d3a262] hover:text-white transition`}
                     >
-                      FAN'S INSTAGRAM
+                      FAN&#39;S INSTAGRAM
                     </button>
                   </div>
                 )}
@@ -141,7 +141,7 @@ export default function FansSlider() {
                     <button
                       className={`mt-6 px-6 py-2 border ${rightFan.btnBorder} ${rightFan.btnText} hover:bg-[#d3a262] hover:text-white transition`}
                     >
-                      FAN'S INSTAGRAM
+                      FAN&#39;S INSTAGRAM
                     </button>
                   </div>
                 )}
