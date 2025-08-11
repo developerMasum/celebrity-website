@@ -10,6 +10,7 @@ const NavLinks = [
   { name: "Home", url: "/", icon: <Dumbbell size={16} /> },
   { name: "Movies", url: "/movies", icon: <Wrench size={16} /> },
   { name: "Gallery", url: "/gallery", icon: <Info size={16} /> },
+  { name: "Fans Corner", url: "/fans-corner", icon: <Info size={16} /> },
   { name: "About", url: "/about", icon: <Info size={16} /> },
   { name: "Contact", url: "/contact", icon: <Phone size={16} /> },
 ];
