@@ -32,8 +32,9 @@ export default function WayfarerFilmsPage() {
         <p className="text-gray-300 mt-4 leading-relaxed">
           In addition to its successful production ventures, Wayfarer Films has
           also made a foray into the distribution segment with the launch of
-          "Wayfarer Films Release." This strategic move further cements the
-          company's position as a major player in the Indian film industry.
+          &quot;Wayfarer Films Release.&quot; This strategic move further
+          cements the company&#39;s position as a major player in the Indian
+          film industry.
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-10 mt-12">
