@@ -6,65 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css/mousewheel";
 import { Pagination, Mousewheel } from "swiper/modules";
 import Image from "next/image";
+import { Fans } from "@/lib/mockData";
 
 export default function FansSlider() {
-  const fans = [
-    {
-      id: "01",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-black",
-      textColor: "text-white",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-white",
-    },
-    {
-      id: "02",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-white",
-      textColor: "text-black",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-black",
-    },
-    {
-      id: "03",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-white",
-      textColor: "text-black",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-white",
-    },
-    {
-      id: "04",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-black",
-      textColor: "text-white",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-black",
-    },
-    {
-      id: "05",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-black",
-      textColor: "text-white",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-white",
-    },
-    {
-      id: "06",
-      name: "Fan's Name",
-      img: "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-      bg: "bg-white",
-      textColor: "text-black",
-      btnBorder: "border-[#d3a262]",
-      btnText: "text-black",
-    },
-  ];
-
   return (
     <div className="w-full h-screen">
       <Swiper
@@ -75,9 +19,9 @@ export default function FansSlider() {
         modules={[Pagination, Mousewheel]}
         className="w-full h-full"
       >
-        {Array.from({ length: Math.ceil(fans.length / 2) }).map((_, i) => {
-          const leftFan = fans[i * 2];
-          const rightFan = fans[i * 2 + 1];
+        {Array.from({ length: Math.ceil(Fans.length / 2) }).map((_, i) => {
+          const leftFan = Fans[i * 2];
+          const rightFan = Fans[i * 2 + 1];
 
           return (
             <SwiperSlide key={i}>
