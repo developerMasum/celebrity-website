@@ -1,4 +1,3 @@
-// components/Reuseable/FooterWrapper.tsx
 "use client";
 
 import { usePathname } from "next/navigation";
