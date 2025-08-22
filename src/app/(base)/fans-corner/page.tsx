@@ -7,6 +7,7 @@ import "swiper/css/mousewheel";
 import { Pagination, Mousewheel } from "swiper/modules";
 import Image from "next/image";
 import { Fans } from "@/lib/mockData";
+import { motion } from "framer-motion";
 
 export default function FansSlider() {
   return (
@@ -28,7 +29,11 @@ export default function FansSlider() {
               <div className="flex w-full h-full">
                 {/* Left */}
                 {leftFan && (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                     className={`w-1/2 flex flex-col justify-between items-center p-6 ${leftFan.bg}`}
                   >
                     {/* Top */}
@@ -55,12 +60,16 @@ export default function FansSlider() {
                     >
                       FAN&#39;S INSTAGRAM
                     </button>
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Right */}
                 {rightFan && (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                     className={`w-1/2 flex flex-col justify-between items-center p-6 ${rightFan.bg}`}
                   >
                     {/* Top */}
@@ -74,8 +83,8 @@ export default function FansSlider() {
                     {/* Image */}
                     <div className="flex-1 flex items-center justify-center w-[450px] h-[600px]">
                       <Image
-                        src={leftFan.img}
-                        alt={leftFan.name}
+                        src={rightFan.img}
+                        alt={rightFan.name}
                         width={450}
                         height={600}
                       />
@@ -87,7 +96,7 @@ export default function FansSlider() {
                     >
                       FAN&#39;S INSTAGRAM
                     </button>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             </SwiperSlide>
