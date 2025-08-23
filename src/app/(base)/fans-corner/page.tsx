@@ -36,7 +36,6 @@ export default function FansSlider() {
                     viewport={{ once: true }}
                     className={`w-1/2 flex flex-col justify-between items-center p-6 ${leftFan.bg}`}
                   >
-                    {/* Top */}
                     <div
                       className={`flex items-center justify-center gap-4 text-4xl font-bold ${leftFan.textColor}`}
                     >
@@ -44,7 +43,6 @@ export default function FansSlider() {
                       <span>{leftFan.name}</span>
                     </div>
 
-                    {/* Image */}
                     <div className="flex-1 flex items-center justify-center w-[450px] h-[600px]">
                       <Image
                         src={leftFan.img}
@@ -54,7 +52,6 @@ export default function FansSlider() {
                       />
                     </div>
 
-                    {/* Button */}
                     <button
                       className={`mt-6 px-6 py-2 border ${leftFan.btnBorder} ${leftFan.btnText} hover:bg-[#d3a262] hover:text-white transition`}
                     >
@@ -63,7 +60,6 @@ export default function FansSlider() {
                   </motion.div>
                 )}
 
-                {/* Right */}
                 {rightFan && (
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -80,7 +76,6 @@ export default function FansSlider() {
                       <span>{rightFan.name}</span>
                     </div>
 
-                    {/* Image */}
                     <div className="flex-1 flex items-center justify-center w-[450px] h-[600px]">
                       <Image
                         src={rightFan.img}
@@ -90,7 +85,6 @@ export default function FansSlider() {
                       />
                     </div>
 
-                    {/* Button */}
                     <button
                       className={`mt-6 px-6 py-2 border ${rightFan.btnBorder} ${rightFan.btnText} hover:bg-[#d3a262] hover:text-white transition`}
                     >
