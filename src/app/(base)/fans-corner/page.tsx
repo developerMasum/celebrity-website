@@ -27,7 +27,6 @@ export default function FansSlider() {
           return (
             <SwiperSlide key={i}>
               <div className="flex w-full h-full">
-                {/* Left */}
                 {leftFan && (
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -68,7 +67,6 @@ export default function FansSlider() {
                     viewport={{ once: true }}
                     className={`w-1/2 flex flex-col justify-between items-center p-6 ${rightFan.bg}`}
                   >
-                    {/* Top */}
                     <div
                       className={`flex items-center justify-center gap-4 text-4xl font-bold ${rightFan.textColor}`}
                     >
