@@ -10,48 +10,12 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import Image from "next/image";
+import { imagesData } from "@/lib/galleryImgData";
 
 export default function Gallery() {
   const onInit = () => {
     console.log("lightGallery has been initialized");
   };
-
-  const images = [
-    "https://i.ibb.co.com/zhKdsd8q/2f76369c-afe6-400e-9672-05f258982fe3.jpg",
-    "https://i.ibb.co.com/JRxKbqz1/03caeeda-b1cc-478d-9c26-03c795d4c93d.jpg",
-    "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
-    "https://i.ibb.co.com/DPjmTFQq/6a8d36f3-0672-4ed6-b946-8b0f21dba457.jpg",
-    "https://i.ibb.co.com/Y4mpg0dw/7b1a6098-5107-4206-97a4-773647a4a9a6.jpg",
-    "https://i.ibb.co.com/fV3VySQv/7d76171e-bff4-43fb-8d77-d73f37b02618.jpg",
-    "https://i.ibb.co.com/LDd6Mj9P/7fb4ce44-3ba3-49cb-89b3-2c79672ec6ab.jpg",
-    "https://i.ibb.co.com/gZBQ4pgb/8a2cf710-7e2d-4399-99e1-f537546fd337.jpg",
-    "https://i.ibb.co.com/ds3PX3zW/9c4a3c98-f187-4d06-83f5-9a42d80db07d.jpg",
-    "https://i.ibb.co.com/wrCnNV0L/14cc8e49-130d-48e6-9442-5e097c61d172.jpg",
-    "https://i.ibb.co.com/0Rym7DBm/55a6a081-2448-4d5a-b378-53edc09d289a.jpg",
-    "https://i.ibb.co.com/KgvDsqN/58ff7208-63cd-4ff2-871d-b57bda8853a0.jpg",
-    "https://i.ibb.co.com/d8fF2dw/61dd41a2-d789-43c0-a7e8-b0bdcac8b2fb.png",
-    "https://i.ibb.co.com/6RFtvd1j/85fbcbbd-ef75-4262-80ed-51ec82cef719.jpg",
-    "https://i.ibb.co.com/C5ktTtcy/94e8841e-0837-4645-a93f-782959bd4bd8.jpg",
-    "https://i.ibb.co.com/XrBz9tXW/101b367f-1fa1-4eb2-a96f-403b48290cc0.png",
-    "https://i.ibb.co.com/3mG6mhRH/6715dc4d-aec8-4daf-bb33-fa312a117aa5.jpg",
-    "https://i.ibb.co.com/J6dgfDN/71306acf-63bc-4261-b0d1-3cacc07dd69f.jpg",
-    "https://i.ibb.co.com/wNpW6hnR/95148c30-28f2-4474-80a8-2dc2d23d0476.jpg",
-    "https://i.ibb.co.com/Y7mPwXGd/965930cb-c840-4a1d-865c-33cac1a05ae9.jpg",
-    "https://i.ibb.co.com/Ndg6r6Qq/84402988-c173-4270-bd69-7ca8a7acf314.jpg",
-    "https://i.ibb.co.com/99zPrTFR/a952d1a4-3ae7-4d27-a9e1-80c33648bd7d.jpg",
-    "https://i.ibb.co.com/23qgX1Gz/a60567b6-0c24-46f7-a04a-0f9b7588ee42.jpg",
-    "https://i.ibb.co.com/XrqQz3K4/b7178494-6ef4-4d71-a294-654b749ddfbf.png",
-    "https://i.ibb.co.com/9HNCB5RT/baeb821c-7648-477e-8479-446612955f05.jpg",
-    "https://i.ibb.co.com/C3m6vVG8/c873077b-9ce5-4b1f-a219-1b9c6bc5e54c.jpg",
-    "https://i.ibb.co.com/kV3PWF2j/d5accd58-8a32-4ec9-b06b-b9189d45480e.png",
-    "https://i.ibb.co.com/0VtqPdpP/d32cf476-2792-45f2-b686-ff5439e0d64f.jpg",
-    "https://i.ibb.co.com/HTN1w6gn/d243e1ab-4d2b-4b3f-943e-47a82355ec5d.jpg",
-    "https://i.ibb.co.com/p6YPTNDn/d960124b-1cc2-4bd1-a1af-66151f1bc613.jpg",
-    "https://i.ibb.co.com/Z6xcLDk8/e3c10eb7-f2f3-4fac-bd8c-d3fdd80d16e9.jpg",
-    "https://i.ibb.co.com/RTQxcDVC/edb9bc01-6cff-4156-8644-f0ade758ae0e.jpg",
-    "https://i.ibb.co.com/ccSz3Wfn/f6aa8147-1318-40b5-864f-854f882a62d2.png",
-    "https://i.ibb.co.com/kTFwZqf/fc62ce25-a8c5-4043-8f6f-650c40f4b4f7.jpg",
-  ];
 
   return (
     <div className="mt-28">
@@ -61,7 +25,7 @@ export default function Gallery() {
         plugins={[lgThumbnail, lgZoom]}
         elementClassNames="grid auto-rows-[200px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
-        {images.map((url, idx) => (
+        {imagesData.map((url, idx) => (
           <a
             key={idx}
             href={url}
