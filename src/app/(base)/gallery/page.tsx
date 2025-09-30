@@ -9,6 +9,7 @@ import "lightgallery/css/lg-thumbnail.css";
 // Plugins
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import Image from "next/image";
 
 export default function Gallery() {
   const onInit = () => {
@@ -16,7 +17,6 @@ export default function Gallery() {
   };
 
   const images = [
-    "https://i.ibb.co.com/zW0Ltx78/2dba0ef1-78d0-423d-b8f6-8b5ef3083295.jpg",
     "https://i.ibb.co.com/zhKdsd8q/2f76369c-afe6-400e-9672-05f258982fe3.jpg",
     "https://i.ibb.co.com/JRxKbqz1/03caeeda-b1cc-478d-9c26-03c795d4c93d.jpg",
     "https://i.ibb.co.com/ccMt2Nmq/3b6f066e-859c-4208-bc76-59db773b56bd.jpg",
@@ -54,19 +54,29 @@ export default function Gallery() {
   ];
 
   return (
-    <div>
+    <div className="mt-28">
       <LightGallery
         onInit={onInit}
         speed={500}
         plugins={[lgThumbnail, lgZoom]}
-        elementClassNames="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        elementClassNames="grid auto-rows-[200px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
         {images.map((url, idx) => (
-          <a key={idx} href={url} data-lg-size="1400-933">
-            <img
+          <a
+            key={idx}
+            href={url}
+            data-lg-size="1400-933"
+            className={`
+              ${idx % 7 === 0 ? "col-span-2 row-span-2" : ""}
+              overflow-hidden
+            `}
+          >
+            <Image
               alt={`Gallery ${idx + 1}`}
               src={url}
-              className="w-full h-auto rounded shadow"
+              width={700}
+              height={475}
+              className="w-full h-full object-cover rounded shadow"
             />
           </a>
         ))}
