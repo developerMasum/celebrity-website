@@ -28,7 +28,7 @@ export default function RightStaticMenu({
               className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
             >
               <X size={18} />
-              <span className="pl-8 transform rotate-90 origin-center text-sm block">
+              <span className="pl-8 transform rotate-90 origin-center text-sm block uppercase">
                 Close
               </span>
             </button>
@@ -41,7 +41,7 @@ export default function RightStaticMenu({
               }}
               className="text-white hover:text-yellow-500 w-full"
             >
-              <span className="transform rotate-90 origin-center text-sm block">
+              <span className="transform rotate-90 origin-center text-sm block uppercase">
                 Categories
               </span>
             </button>
@@ -49,7 +49,7 @@ export default function RightStaticMenu({
         </div>
 
         {/* Dot Divider */}
-        <Dot size={18} className="text-white" />
+        <Dot size={40} className="text-yellow-500 " />
 
         {/* About Button */}
         <div className="w-full text-center">
@@ -60,7 +60,7 @@ export default function RightStaticMenu({
               className="text-white hover:text-yellow-500 flex flex-col items-center w-full"
             >
               <X size={18} />
-              <span className="pl-8 transform rotate-90 origin-center text-sm block">
+              <span className="pl-8 transform rotate-90 origin-center text-sm block uppercase">
                 Close
               </span>
             </button>
@@ -73,7 +73,7 @@ export default function RightStaticMenu({
               }}
               className="text-white hover:text-yellow-500 w-full"
             >
-              <span className="transform rotate-90 origin-center text-sm block">
+              <span className="transform rotate-90 origin-center text-sm block uppercase">
                 About
               </span>
             </button>

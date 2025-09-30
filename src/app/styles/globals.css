@@ -25,3 +25,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-family-base), sans-serif;
 }
+@keyframes spinProgress {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-progress {
+  animation: spinProgress 5s linear forwards;
+}

@@ -1,4 +1,5 @@
 import hero1 from "./hero/hero1.webp";
+import footerLogo from "./hero/footer.webp";
 
 import about from "./utils/About-DQ.webp";
 
@@ -13,6 +14,7 @@ const assets = {
   hero: {
     hero1,
     about,
+    footerLogo,
   },
 
   movies: {

@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function FansSlider() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen mt-24">
       <Swiper
         direction="vertical"
         slidesPerView={1}
