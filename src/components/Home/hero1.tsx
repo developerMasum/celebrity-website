@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import CategoryPanel from "./CategoryPanel";
 import AboutPanel from "./AboutPanel";
-import SocialIcons from "./SocialIcon";
+
 import RightStaticMenu from "./RightStaticMenu ";
 
 import image1 from "@/assets/hero/hero1.webp";
@@ -15,11 +15,9 @@ export default function HeroOne() {
   const [showCategories, setShowCategories] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
 
-  // Images for slider
   const images = [image1, image2, image3];
   const [current, setCurrent] = useState(0);
 
-  // Auto change image every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -34,7 +32,6 @@ export default function HeroOne() {
 
   return (
     <section className="relative w-full h-screen bg-black text-white overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0 transition-opacity duration-700">
         <Image
           src={images[current]}
@@ -45,13 +42,8 @@ export default function HeroOne() {
         />
       </div>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* Social Icons */}
-      {/* <SocialIcons /> */}
-
-      {/* Right Static Menu */}
       <RightStaticMenu
         showCategories={showCategories}
         showAbout={showAbout}
@@ -60,7 +52,6 @@ export default function HeroOne() {
         handleClose={handleClose}
       />
 
-      {/* Hero Content */}
       <div className="relative z-20 flex flex-col justify-end h-full px-60 pb-10">
         <p className="text-sm text-yellow-500">Releasing on 31st October</p>
         <h1 className="text-5xl font-bold">Lucky Baskhar</h1>
@@ -68,7 +59,6 @@ export default function HeroOne() {
           Book Your Tickets
         </button>
 
-        {/* Dynamic Dots */}
         <div className="flex items-center gap-3 mt-4">
           {images.map((_, idx) => (
             <div
@@ -76,7 +66,6 @@ export default function HeroOne() {
               className="relative w-10 h-10 flex items-center justify-center cursor-pointer"
               onClick={() => setCurrent(idx)}
             >
-              {/* Number */}
               <span
                 className={`relative z-10 text-sm font-semibold ${
                   current === idx ? "text-white" : "text-white"
@@ -85,14 +74,12 @@ export default function HeroOne() {
                 0{idx + 1}
               </span>
 
-              {/* Static Border */}
               <span
                 className={`absolute inset-0 rounded-full border transition ${
                   current === idx ? "border-yellow-500" : "border-white/60"
                 }`}
               />
 
-              {/* Progress Ring (active only) */}
               {current === idx && (
                 <span className="absolute inset-0 rounded-full border-[2px] border-transparent border-t-yellow-500 animate-spin-progress"></span>
               )}
@@ -101,7 +88,6 @@ export default function HeroOne() {
         </div>
       </div>
 
-      {/* Panels */}
       {showCategories && <CategoryPanel onClose={handleClose} />}
       {showAbout && <AboutPanel onClose={handleClose} />}
     </section>
